@@ -7,7 +7,6 @@ import glob                 # zum Laden von Bildern in den Chache
 
 ####################### Tetris 1.0
 ########## Autor: Felix Zimmermann
-##### Abschlussprojekt Python-Kurs
 #
 #
 #     Klassen und Funktionen
@@ -62,7 +61,7 @@ class Tetris():
             new_line = [0] * 10                     # alle Felder zu Beginn mit Nullen füllen
             self.belegte_felder.append(new_line)
 
-        images = glob.glob('*.png')             # alle Bilder in den Cache vorladen
+        images = glob.glob('/img/*.png')             # alle Bilder in den Cache vorladen
         for image in images:
             self.get_image(image)
 
@@ -393,7 +392,7 @@ class Tetris():
 
                             # nachträglich Bilder für die gelöschten Felder erstellen, um sie dann auszublenden
 
-                            block1_img = pygame.image.load(f"bg.png")
+                            block1_img = pygame.image.load("img/bg.png")
                             block1_img.set_alpha(x)
                             self.screen.blit(block1_img, (a * 30 + self.margin_left, i * 30 + self.margin_top))
 
@@ -443,7 +442,7 @@ class Tetris():
             self.screen.fill(self.bg_color)
 
             # Hintergrundbild laden
-            block1_img = pygame.image.load("bg-gesamt.png")
+            block1_img = pygame.image.load("img/bg-gesamt.png")
             self.screen.blit(block1_img, (0,0))
 
             # Falls Demo-Modus aktiviert wird: Timer anhalten, Schriftzug und Log einblenden
@@ -518,7 +517,7 @@ class Tetris():
 
                         # falls Grafik-Modus aktiviert ist, Hintergrund durch Bild ersetzen. Muss vor zweitem draw-Befehl kommen
                         if self.with_graphic == True:
-                            block2_img = self.get_image('bg.png')
+                            block2_img = self.get_image('img/bg.png')
                             self.screen.blit(block2_img, (a * 30 + self.margin_left, i * 30 + self.margin_top))
 
                         pygame.draw.rect(self.screen, self.black,
@@ -604,13 +603,13 @@ class Tetriblock():
 
     # zugehörige Bilder, gleiche Key-Werte
     img = {                         #
-        1: '1.png',
-        2: '2.png',
-        3: '3.png',
-        4: '4.png',
-        5: '5.png',
-        6: '6.png',
-        7: '7.png',
+        1: 'img/1.png',
+        2: 'img/2.png',
+        3: 'img/3.png',
+        4: 'img/4.png',
+        5: 'img/5.png',
+        6: 'img/6.png',
+        7: 'img/7.png',
     }
 
     # neuen Stein bauen, zufällige Form
