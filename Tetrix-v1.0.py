@@ -5,7 +5,7 @@ import random               #
 import glob                 # zum Laden von Bildern in den Chache
 
 
-####################### Tetris 1.0
+####################### Tetrix 1.0
 ########## Autor: Felix Zimmermann
 #
 #
